@@ -1,14 +1,21 @@
 let brightnessInput;
+let controlPanel;
 
-function getBrightness() {
-    GetBrightness.value = getBrightness.value;
-}
-
-addEventListener("DOMContentLoaded", (event) => {
+window.addEventListener("DOMContentLoaded", (event) => {
     brightnessInput = document.getElementById("brightness");
-    console.log(brightnessInput.value);
-    brightnessInput.addEventListener("change", (event) => {
-        brightnessInput.value = getBrightness.value;
-        console.log(brightnessInput.value);
+    controlPanel = document.getElementById("controlPanel");
+
+    if (brightnessInput) {
+        console.log("Initial brightness:", brightnessInput.value);
+    }
+
+    brightnessInput.addEventListener("input", (event) => {
+        let currentVal = event.target.value;
+        console.log("currentBrightness:", currentVal);
+
+        if (controlPanel) {
+            controlPanel.style.filter = `brightness(${currentVal})`;
+            console.log("Applied CSS filter:", `brightness(${currentVal})`);
+        }
     })
-});
+})
