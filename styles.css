@@ -32,6 +32,10 @@ body p {
     width: 100%;
 }
 
+.h2 {
+    text-align: right;
+}
+
 .text-block {
     max-width: 500px;
     flex: 1;
@@ -53,4 +57,11 @@ body p {
     margin-bottom: 20px;
     filter: brightness(0.8);
     transition: filter 0.1s ease;
+}
+.list li {
+    margin-bottom: 1rem;
+}
+
+.list li:last-child {
+    margin-bottom: 0;
 }
