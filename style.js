@@ -1,21 +1,21 @@
-let brightnessInput;
-let controlPanel;
+window.addEventListener('DOMContentLoaded', (event) => {
+const themeButton = document.getElementById("themeButton");
 
-window.addEventListener("DOMContentLoaded", (event) => {
-    brightnessInput = document.getElementById("brightness");
-    controlPanel = document.getElementById("controlPanel");
-
-    if (brightnessInput) {
-        console.log("Initial brightness:", brightnessInput.value);
+if (!themeButton) {
+        return;
     }
 
-    brightnessInput.addEventListener("input", (event) => {
-        let currentVal = event.target.value;
-        console.log("currentBrightness:", currentVal);
+const toggleDarkMode = () => {
+const body = document.body;
 
-        if (controlPanel) {
-            controlPanel.style.filter = `brightness(${currentVal})`;
-            console.log("Applied CSS filter:", `brightness(${currentVal})`);
+if (body.style.backgroundColor === 'rgb(51, 51, 51)' || body.style.backgroundColor === '#333333') {
+       body.style.backgroundColor = '#ffffff';
+       body.style.color = '#000000';
+        } else {
+        body.style.backgroundColor = '#333333';
+        body.style.color = '#ffffff';
         }
-    })
-})
+    };
+
+    themeButton.addEventListener("click", toggleDarkMode);
+});

@@ -12,7 +12,6 @@ body {
 }
 
 body p {
-    background-color: #ffffff;
     color: #333333;
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
@@ -49,14 +48,10 @@ body p {
     width: 500px !important;
     height: auto !important;
 }
-
 .control-panel {
-    background: #f0f0f0;
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
-    filter: brightness(0.8);
-    transition: filter 0.1s ease;
 }
 .list li {
     margin-bottom: 1rem;
